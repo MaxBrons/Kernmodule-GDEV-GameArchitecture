@@ -1,0 +1,21 @@
+@startuml
+
+skin rose
+
+title Inventory System
+
+
+class Inventory {
+
+}
+
+class InventorySlot {
+
+}
+
+class InventoryItem {
+
+}
+
+
+@enduml
