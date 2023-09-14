@@ -5,16 +5,40 @@ skin rose
 title Classes - Crafting System - Inventory System
 
 namespace CraftingSystem {
-	class CraftingManager
-	class RecipeBook
-	class Recipe
-	class Item
+	class CraftingManager {
+	  - int gridSize
+	
+	  + Recipe CheckMatchingRecipe()
+	  + bool Craft(Item[,])
 	}
+  
+	class RecipeBook {
+	  + List<Recipe> unlockedRecipes
+	  
+	  + List<Recipe> GetUnlockedRecipes()
+	}
+  
+	class Recipe {
+	  - bool shapeless
+	  - int gridSizeRequired
+	  - Item[,] requiredItemGrid
+	  
+	  + Item[,] GetRequiredItemGrid()
+	  + bool CheckMatchingRecipe(Item[,])
+	}
+  
+	class Item{}
+
+	RecipeBook "1" -> "0..*" Recipe : Holds
+	Recipe "0..*" -> "1..* "Item : Requires
+	CraftingManager "1" -> "1" Recipe : Creates
+	CraftingManager "1" -> "1" RecipeBook : Looks into
+}
 
 namespace InventorySystem {
 	class Inventory {
 	  - List<InventorySlot> slots
-	  
+
 	  + Inventory(int maxSlots)
 	  + bool AddItem(InventoryItem item)
 	  + bool RemoveItem(InventoryItem item)
