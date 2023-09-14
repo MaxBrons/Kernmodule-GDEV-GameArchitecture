@@ -39,6 +39,9 @@ namespace InventorySystem {
 	  
 	  + InventoryItem(string name, Sprite sprite, GameObject itemPrefab)
 	}
+	
+	Inventory "1" *-- "1..*" InventorySlot : Stores
+	InventorySlot "1..*" *-- "0..*" InventoryItem : Stores
 }
 
 @enduml
