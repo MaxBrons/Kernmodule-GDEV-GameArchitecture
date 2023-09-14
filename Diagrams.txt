@@ -2,12 +2,20 @@
 
 skin rose
 
-title Classes - Crafting System
+title Classes - Crafting System - Inventory System
 
-class CraftingManager
-class RecipeBook
-class Recipe
-class Item
+namespace CraftingSystem {
+	class CraftingManager
+	class RecipeBook
+	class Recipe
+	class Item
+	}
+
+namespace InventorySystem {
+	class Inventory
+	class InventorySlot
+	class InventoryItem
+}
 
 RecipeBook "1" -> "0..*" Recipe : Holds
 Recipe "0..*" -> "1..* "Item : Requires
