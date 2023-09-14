@@ -1,0 +1,12 @@
+@startuml
+
+skin rose
+
+title Classes - Crafting System
+
+class CraftingManager
+class RecipeBook
+class Recipe
+class Item
+
+@enduml
