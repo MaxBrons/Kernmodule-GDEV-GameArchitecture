@@ -12,9 +12,33 @@ namespace CraftingSystem {
 	}
 
 namespace InventorySystem {
-	class Inventory
-	class InventorySlot
-	class InventoryItem
+	class Inventory {
+	  - List<InventorySlot> slots
+	  
+	  + Inventory(int maxSlots)
+	  + bool AddItem(InventoryItem item)
+	  + bool RemoveItem(InventoryItem item)
+	  - void Initialize(int maxSlots)
+	}
+	
+	class InventorySlot {
+	  - InventoryItem item
+	  - int count
+	  
+	  + bool Initialize(InventoryItem item)
+	  + InventoryItem GetItem()
+	  + int GetCount()
+	  + int Add()
+	  + int Remove()
+	}
+	
+	struct InventoryItem {
+	  + string Name
+	  + Sprite Sprite
+	  + GameObject ItemPrefab
+	  
+	  + InventoryItem(string name, Sprite sprite, GameObject itemPrefab)
+	}
 }
 
 @enduml
