@@ -9,4 +9,9 @@ class RecipeBook
 class Recipe
 class Item
 
+RecipeBook "1" -> "0..*" Recipe : Holds
+Recipe "0..*" -> "1..* "Item : Requires
+CraftingManager "1" -> "1" Recipe : Creates
+CraftingManager "1" -> "1" RecipeBook : Looks into
+
 @enduml
