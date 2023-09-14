@@ -2,11 +2,19 @@
 
 skin rose
 
-title Classes - Crafting System
+title Classes - Crafting System - Inventory System
 
-class CraftingManager
-class RecipeBook
-class Recipe
-class Item
+namespace CraftingSystem {
+	class CraftingManager
+	class RecipeBook
+	class Recipe
+	class Item
+	}
+
+namespace InventorySystem {
+	class Inventory
+	class InventorySlot
+	class InventoryItem
+}
 
 @enduml
